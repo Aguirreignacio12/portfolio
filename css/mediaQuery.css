@@ -22,10 +22,14 @@
         display: none;
     }
 
+    .logo a{
+        text-align: center;
+    }
     /* panel */
     .panel {
         position: relative;
         transform: none;
+        height: auto;
     }
 
     /* MENU DE NAVEGACIÓN */

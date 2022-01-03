@@ -1,12 +1,16 @@
-const HEADER = document.getElementById('top-header');
-const BACK_TO_TOP = document.getElementById('back-to-top');
-
-BACK_TO_TOP.addEventListener('click', () => {
-    window.scrollTo(0, 0);
-    HEADER.focus();
+window.addEventListener('scroll', e => {
+    var el = document.getElementById('jsScroll');
+    if (window.scrollY > 200) {
+        el.classList.add('visibleScroll');
+    } else {
+        el.classList.remove('visibleScroll');
+    }
 });
 
-
-
-
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
 // Language: javascript

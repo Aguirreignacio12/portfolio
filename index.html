@@ -60,7 +60,6 @@
         </nav>
     </header>
     <main>
-        <button id="back-to-top">Back to top</button>
         <section id="home" class="section" data-scroll-spy>
             <!-- Background animation-->
             <div class="background">
@@ -393,9 +392,12 @@
                 <p>Design <span>Ignacio Aguirre</span> | Copyright © 2021</p>
             </div>
         </footer>
+        <div id="jsScroll" class="scroll" onclick="scrollToTop();">
+            <span><img src="icon/angle-up-solid.svg" alt="backToTop"></span>
+        </div>
     </main>
-    <script src="components/back-to-top.js"></script>
     <script src="js/app.js" type="module"></script>
+    <script src="components/back-to-top.js"></script>
     <script src="components/scrollAnimation.js"></script>
 </body>
 

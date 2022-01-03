@@ -53,14 +53,6 @@ body {
     background: -moz-linear-gradient(top left, #0C0C0C, #1d1b1b);
     background: linear-gradient(to bottom right, #0C0C0C, #1d1b1b);
 }
-
-#back-to-top {
-    bottom: 7em;
-    right: 1em;
-    position: fixed;
-}
-
-
 __
 /* NAV CONTENT */
 
@@ -76,7 +68,7 @@ __
     color: white;
     font-size: 1.5em;
     padding: .6em;
-    text-align: center;
+    text-align: left;
     position: relative;
     display: block;
 }
@@ -86,7 +78,7 @@ __
 .panel-btn {
     position: fixed;
     z-index: 2;
-    bottom: 1vh;
+    top: -.2em;
     right: 1vh;
     width: 4em;
     height: 4em;
@@ -95,8 +87,8 @@ __
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--bg-button-hamburger);
-    filter: invert(1) hue-rotate(180deg);
+    background: transparent;
+    filter: invert(1);
 }
 
 
@@ -108,7 +100,7 @@ __
     background: -moz-linear-gradient(top left, #0C0C0C, #1d1b1b);
     background: linear-gradient(to bottom right, #0C0C0C, #1d1b1b);
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 3.5em);
     transition: transform .3s ease;
     /* de arriba */
     transform: translate(100%, 0);
@@ -126,7 +118,7 @@ __
 .nav__menu {
     display: flex;
     list-style: none;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
 
@@ -692,4 +684,52 @@ __
 .footer__copyright span {
     color: var(--color-secondary);
 
+}
+
+/* <-------------- SCROLL TO TOP -------------> */
+
+.scroll {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 1em;
+    right: -5em;
+    border-radius: 100%;
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, #1fbed3 0%, rgba(32, 45, 58, 1) 81.3%);
+    color: #fff;
+    opacity: .5;
+    text-align: center;
+    transition: 500ms;
+}
+
+.scroll:hover {
+    opacity: 1;
+}
+
+.scroll img {
+    width: 20px;
+    padding-top: 0.2rem;
+}
+
+.scroll:hover img {
+    animation-name: rotate;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes rotate {
+    from {
+        margin-top: 4px
+    }
+
+    to {
+        margin-top: -1px
+    }
+}
+
+.visibleScroll {
+    right: 1em;
+    transition: all 800ms;
+    transform: rotate(360deg)
 }
